@@ -1,0 +1,418 @@
+globals:
+    RouterLink: readonly
+root: true
+
+env:
+    browser: true
+    node: true
+    jest: true
+
+extends:
+    - "eslint:recommended"
+    - "plugin:vue/vue3-recommended"
+
+parserOptions:
+    parser: "@babel/eslint-parser"
+    ecmaVersion: 2021
+    impliedStrict: true
+    ecmaFeatures:
+        classes: true
+    sourceType: module
+
+plugins:
+    - "@babel"
+    - vue
+
+rules:
+    array-bracket-newline:
+        -   error
+        -   multiline: true
+            minItems: 5
+    array-bracket-spacing:
+        -   error
+        -   always
+        -   singleValue: true
+            objectsInArrays: true
+            arraysInArrays: true
+    array-callback-return: error
+    array-element-newline:
+        -   error
+        -   ArrayExpression: consistent
+            ArrayPattern:
+                multiline: true
+                minItems: 4
+    arrow-body-style:
+        -   error
+        -   as-needed
+        -   requireReturnForObjectLiteral: false
+    arrow-parens:
+        -   error
+        -   always
+
+    block-scoped-var: error
+    block-spacing: error
+    brace-style:
+        -   warn
+        -   stroustrup
+        -   allowSingleLine: true
+
+    comma-dangle:
+        -   warn
+        -   arrays: only-multiline
+            objects: only-multiline
+            imports: never
+            exports: never
+            functions: never
+    comma-spacing:
+        -   error
+        -   before: false
+            after: true
+    comma-style:
+        -   error
+        -   last
+    computed-property-spacing:
+        -   error
+        -   never
+    curly:
+        -   error
+        -   multi-line
+
+    default-param-last: error
+    dot-location:
+        -   error
+        -   property
+    dot-notation:
+        -   error
+        -   allowKeywords: false
+
+    eqeqeq:
+        -   error
+        -   smart
+
+    func-call-spacing:
+        -   error
+        -   never
+    func-style:
+        -   warn
+        -   declaration
+        -   allowArrowFunctions: true
+    function-paren-newline:
+        -   warn
+        -   consistent
+
+    indent:
+        -   error
+        -   4
+        -   SwitchCase: 1
+            VariableDeclarator:
+                var: 1
+                let: 1
+                const: 2
+            MemberExpression: 1
+            FunctionDeclaration:
+                body: 1
+                parameters: 1
+            CallExpression:
+                arguments: 1
+            ArrayExpression: 1
+            ObjectExpression: 1
+            ImportDeclaration: 1
+            flatTernaryExpressions: true
+
+    key-spacing:
+        -   error
+        -   beforeColon: false
+            afterColon: true
+    keyword-spacing:
+        -   error
+        -   before: true
+            after: true
+
+    lines-around-comment:
+        -   warn
+        -   beforeBlockComment: true
+            afterBlockComment: true
+            beforeLineComment: false
+            afterLineComment: false
+            allowBlockStart: true
+            allowBlockEnd: true
+            allowClassStart: true
+            allowObjectStart: true
+            allowArrayStart: true
+            allowArrayEnd: false
+
+    max-depth:
+        -   warn
+        -   max: 4
+    max-len:
+        -   warn
+        -   code: 80
+            comments: 80
+            ignoreRegExpLiterals: true
+            ignoreStrings: true
+            ignoreTemplateLiterals: true
+            ignoreTrailingComments: true
+            ignoreUrls: true
+    max-lines:
+        -   warn
+        -   max: 600
+            skipBlankLines: true
+            skipComments: true
+
+    newline-per-chained-call:
+        -   error
+        -   ignoreChainWithDepth: 2
+    no-confusing-arrow:
+        -   error
+    no-console: off
+    no-debugger: off
+    no-duplicate-imports:
+        -   error
+        -   includeExports: true
+    no-empty-function: error
+    no-lonely-if: warn
+    no-multi-assign: error
+    no-multi-spaces:
+        -   error
+        -   ignoreEOLComments: true
+    no-multi-str: error
+    no-multiple-empty-lines:
+        -   error
+        -   max: 3
+    no-negated-condition: warn
+    no-nested-ternary: warn
+    no-param-reassign: error
+    no-return-assign: error
+    no-return-await: off
+    no-sequences: error
+    no-template-curly-in-string: error
+    no-trailing-spaces: error
+    no-underscore-dangle: warn
+    no-unneeded-ternary: warn
+    no-unsafe-optional-chaining: error
+    no-unused-vars:
+        -   error
+        -   args: none
+    no-undef: error
+    no-useless-computed-key: error
+    no-useless-rename: error
+    no-var: error
+    no-whitespace-before-property: error
+
+    object-curly-newline:
+        -   error
+        -   consistent: true
+    object-curly-spacing:
+        -   error
+        -   always
+        -   arraysInObjects: true
+            objectsInObjects: true
+    object-property-newline: error
+    object-shorthand:
+        -   error
+        -   always
+        -   avoidQuotes: true
+            avoidExplicitReturnArrows: true
+    one-var-declaration-per-line: error
+    operator-linebreak:
+        -   error
+        -   before
+
+    padded-blocks:
+        -   error
+        -   never
+    padding-line-between-statements:
+        -   error
+        -   blankLine: always
+            prev: "*"
+            next: [function, block-like, return]
+    prefer-arrow-callback:
+        -   error
+        -   allowNamedFunctions: true
+    prefer-const:
+        -   warn
+        -   destructuring: all
+            ignoreReadBeforeAssign: true
+    prefer-object-spread: warn
+    prefer-rest-params: error
+    prefer-spread: error
+    prefer-template: error
+
+    quote-props:
+        -   error
+        -   as-needed
+        -   keywords: false
+    quotes:
+        -   error
+        -   double
+        -   avoidEscape: true
+            allowTemplateLiterals: true
+
+    require-await: warn
+    rest-spread-spacing: error
+
+    semi:
+        -   error
+        -   never
+        -   beforeStatementContinuationChars: always
+    semi-style:
+        -   error
+        -   last
+    semi-spacing:
+        -   error
+        -   before: false
+            after: true
+    sort-imports:
+        -   error
+        -   ignoreCase: true
+            ignoreDeclarationSort: true
+            ignoreMemberSort: true
+            memberSyntaxSortOrder: [ none, all, single, multiple ]
+            allowSeparatedGroups: true
+    symbol-description: error
+    space-before-blocks:
+        -   error
+        -   always
+    space-before-function-paren:
+        -   error
+        -   always
+    space-in-parens:
+        -   error
+        -   always
+        -   exceptions:
+            - "{}"
+            - "[]"
+            - empty
+    space-infix-ops: error
+    space-unary-ops: error
+    spaced-comment:
+        -   error
+        -   always
+        -   line:
+                exceptions: ["-", "+", "*"]
+            block:
+                balanced: true
+                exceptions: ["-", "+", "*"]
+
+    template-curly-spacing:
+        -   error
+        -   always
+
+    vue/attributes-order: off
+
+    vue/block-tag-newline: error
+
+    vue/component-name-in-template-casing:
+        -   error
+        -   kebab-case
+    vue/component-tags-order:
+        -   error
+        -   order:
+            -   template
+            -   [ script, docs ]
+            -   style
+            -   docs
+    vue/custom-event-name-casing: off
+
+    vue/html-comment-content-newline:
+        -   error
+        -   singleline: never
+            multiline: always
+    vue/html-comment-content-spacing: error
+    vue/html-comment-indent:
+        -   error
+        -   4
+    vue/html-end-tags: error
+    vue/html-indent:
+        -   warn
+        -   4
+        -   baseIndent: 0
+    vue/html-self-closing:
+        -   error
+        -   html:
+                void: never
+                normal: never
+                component: never
+            svg: always
+    vue/html-quotes:
+        -   error
+        -   double
+        -   avoidEscape: true
+
+    vue/match-component-file-name:
+        -   error
+        -   extensions: [vue]
+            shouldMatchCase: true
+
+    vue/no-deprecated-scope-attribute: error
+    vue/no-deprecated-slot-attribute: error
+    vue/no-deprecated-slot-scope-attribute: error
+    vue/no-duplicate-attr-inheritance: error
+    vue/no-lifecycle-after-await: error
+    vue/no-multiple-objects-in-class: error
+    vue/no-potential-component-option-typo: error
+    vue/no-ref-as-operand: error
+    vue/no-reserved-component-names:
+        -   error
+        -   disallowVueBuiltInComponents: true
+            disallowVue3BuiltInComponents: true
+    vue/no-restricted-call-after-await: error
+    vue/no-setup-props-destructure: error
+    vue/no-template-target-blank: error
+    vue/no-unregistered-components:
+        - error
+        - ignorePatterns:
+            - fa-icon
+    # vue/no-v-for-template-key-on-child is for vue 3 only.
+    vue/no-v-for-template-key-on-child: off
+    vue/no-v-html: off
+    vue/no-watch-after-await: error
+
+    vue/object-curly-spacing:
+        -   error
+        -   always
+        -   arraysInObjects: true
+            objectsInObjects: true
+
+    vue/order-in-components:
+        -   error
+        -   order:
+            -   name
+            -   extends
+            -   mixins
+            -   inheritAttrs
+            -   [components, directives]
+            -   [provide, inject]
+            -   emits
+            -   model
+            -   [props, propsData]
+            -   setup
+            -   data
+            -   computed
+            -   watch
+            -   LIFECYCLE_HOOKS
+            -   methods
+
+    vue/padding-line-between-blocks:
+        -   error
+        -   always
+
+    vue/require-slots-as-functions: error
+
+    vue/sort-keys:
+        -   error
+        -   asc
+        -   natural: true
+
+    vue/v-on-function-call:
+        -   error
+        -   never
+
+    wrap-iife:
+        -   error
+        -   inside
+
+    yoda:
+        -   error
+        -   never
+        -   exceptRange: true
