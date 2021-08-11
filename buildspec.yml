@@ -1,3 +1,5 @@
+version: 0.2
+
 phases:
   install:
     commands:
@@ -11,7 +13,3 @@ phases:
   post_build:
     commands:
       - echo nothing to do
-artifacts:
-  files:
-    - '**/*'
-  base-directory: dist
